@@ -1,2 +1,5 @@
-# Extion-Infotech-Internship
-This repository contains various tools to automate machine learning tasks (AutoML) using libraries like TPOT, H20ai and AutoKeras
+# TPOT Documentation
+## Introduction
+TPOT is an AutoML library that creates an optimized pipeline for the task of  classification or regression. It constitutes of grid search over various models with certain hyperparameters. The attributes *generations*, *population_size* and *cv*, which controls the total numbers of model fit (i.e *generations* $\times$ *population_size* $\times$ *cv*) to task and optimized model is returned. Further, *cv* represents cross-validations i.e. TPOT is based on average scoring of *cross_val_scores*. Hence it is built over libraries like **scikit-learn**, **scipy**, **PyTorch**, etc.
+
+## Creating Optimized Pipeline
