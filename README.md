@@ -15,9 +15,9 @@ This project combines **Federated Learning (FL)** and **Quantum Machine Learning
 Healthcare data often includes high-dimensional modalities like **medical images** and **text reports**. The data preparation pipeline involves:
 1. **Normalization and Imputation:**  
    Missing values are filled using mean/mode (imputation), and features are scaled:
-   \[
+   $$
    x' = \frac{x - \mu}{\sigma}
-   \]
+   $$
    where \( \mu \) and \( \sigma \) are the mean and standard deviation of the feature.
 
 2. **Data Partitioning for Federated Learning:**  
@@ -45,9 +45,9 @@ X_normalized = scaler.fit_transform(X_imputed)
 
 #### **Mathematical Model**:
 Each client \( k \) computes gradients \( \nabla L_k \) using its local data:
-\[
+$$
 \theta^{t+1} = \sum_{k=1}^N \frac{n_k}{n} \theta_k^{t+1}
-\]
+$$
 Where:
 - \( \theta \): Model parameters  
 - \( N \): Total clients  
@@ -80,16 +80,16 @@ iterative_process = tff.learning.build_federated_averaging_process(model_fn)
 Healthcare data privacy is ensured using:
 1. **Differential Privacy (DP):**  
    Adds noise to model updates:
-   \[
+   $$
    \Delta f + \mathcal{N}(0, \sigma^2)
-   \]
+   $$
    where \( \sigma \) controls the noise magnitude.
 
 2. **Homomorphic Encryption (HE):**  
    Encrypts data so operations can be performed on encrypted data without decryption:
-   \[
+   $$
    E(a) + E(b) = E(a + b)
-   \]
+   $$
 
 3. **Secure Multiparty Computation (SMPC):**  
    Data is split into shares and securely computed without revealing raw values.
@@ -109,9 +109,9 @@ QML enhances federated learning by improving the model's ability to capture comp
 
 #### **Quantum Support Vector Machines (QSVMs):**
 Uses a **Quantum Kernel** for feature mapping:
-\[
+$$
 K(x, x') = |\langle \phi(x) | \phi(x') \rangle|^2
-\]
+$$
 where \( \phi(x) \) is the quantum state of input \( x \).
 
 #### **Implementation with Qiskit:**
@@ -159,24 +159,24 @@ Automated retraining is scheduled using **APScheduler** to incorporate new data 
 
 ## **Mathematics Summary**
 1. **Gradient Descent in Federated Learning:**
-   \[
+   $$
    \theta^{t+1} = \theta^t - \eta \nabla L(\theta^t)
-   \]
+   $$
 
 2. **Quantum Kernel for QSVM:**
-   \[
+   $$
    K(x, x') = |\psi(x)^* \psi(x')|^2
-   \]
+   $$
 
 3. **Differential Privacy Noise Addition:**
-   \[
+   $$
    \text{Noisy Update} = \Delta w + \mathcal{N}(0, \sigma^2)
-   \]
+   $$
 
 4. **Secure Aggregation:**
-   \[
+   $$
    S = \sum_{i=1}^n \text{Share}(x_i)
-   \]
+   $$
 
 ---
 
