@@ -15,9 +15,9 @@ This project combines **Federated Learning (FL)** and **Quantum Machine Learning
 Healthcare data often includes high-dimensional modalities like **medical images** and **text reports**. The data preparation pipeline involves:
 1. **Normalization and Imputation:**  
    Missing values are filled using mean/mode (imputation), and features are scaled:
-   $$
+  \(
    x' = \frac{x - \mu}{\sigma}
-   $$
+   \)
    where \( \mu \) and \( \sigma \) are the mean and standard deviation of the feature.
 
 2. **Data Partitioning for Federated Learning:**  
